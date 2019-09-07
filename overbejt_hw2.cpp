@@ -8,6 +8,7 @@
  * Copyright (c) 2019 overbejt@miamioh.edu
  */
 
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
@@ -16,7 +17,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    cout << "skeleton code generated" << endl;
+    cout << "Skeleton code generated" << endl;
     return 0;
-}  // End of main method
+}  // End of main
 
