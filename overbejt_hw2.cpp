@@ -14,6 +14,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 // Aliases
 using namespace std;
@@ -29,12 +30,11 @@ UsrMap users;
 void readUsers() {
     ifstream pswd("passwd");
     string line;
-    int uid;
     
     if (pswd.is_open()) {
         while (getline(pswd, line)) {
             cout << "before: " << line << endl;
-            line.replace(line.begin(), line.end(), ':', ' ');
+            replace(line.begin(), line.end(), ':', ' ');
             cout << "after: " << line << endl;
         }
     }
