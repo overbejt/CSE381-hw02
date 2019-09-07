@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 // Aliases
 using namespace std;
@@ -27,8 +28,15 @@ UsrMap users;
  */
 void readUsers() {
     ifstream pswd("passwd");
+    string line;
+    int uid;
+    
     if (pswd.is_open()) {
-        cout << "the file is open" << endl;
+        while (getline(pswd, line)) {
+            cout << "before: " << line << endl;
+            line.replace(line.begin(), line.end(), ':', ' ');
+            cout << "after: " << line << endl;
+        }
     }
     pswd.close();
 }  // End of the 'readUsers' method
