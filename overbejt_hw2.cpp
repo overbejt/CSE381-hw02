@@ -69,11 +69,11 @@ void readGroups() {
             // Tokenize the line
             replace(line.begin(), line.end(), ':', ' ');
             
-            // Parse out the login ID and UID
+            // Parse out the group name, GID, and users list
             istringstream is(line);            
-            string loginId, unused, uid_line;
+            string grpName, unused, uid_line;
             int gid;
-            is >> loginId >> unused >> gid >> uid_line;            
+            is >> grpName >> unused >> gid >> uid_line;            
 //            users.insert({uid, loginId});
 //            for (auto i : users) {
 //                cout << "UID: " << i.first;
