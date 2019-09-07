@@ -42,15 +42,23 @@ void readUsers() {
             int uid;
             is >> loginId >> unused >> uid;            
             users.insert({uid, loginId});
-            for (auto i : users) {
-                cout << "UID: " << i.first;
-                cout << "\tlogin ID: " << i.second;
-                cout << endl;
-            }
+//            for (auto i : users) {
+//                cout << "UID: " << i.first;
+//                cout << "\tlogin ID: " << i.second;
+//                cout << endl;
+//            }
         }
     }
     pswd.close();
 }  // End of the 'readUsers' method
+
+/**
+ * This is the method that will the groups file and put all of the groups in an
+ * unordered map.
+ */
+void readGroups() {
+    
+}  // End of the 'readGroups' method
 
 /*
  * 
@@ -58,6 +66,7 @@ void readUsers() {
 int main(int argc, char** argv) {
     // Scrape users from passwd file
     readUsers();
+    readGroups();
     return 0;
 }  // End of main
 
