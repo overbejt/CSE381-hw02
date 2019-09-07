@@ -22,10 +22,25 @@
 using namespace std;
 using UsrMap = unordered_map<int, string>;
 using GroupsMap = unordered_map<string, pair<string, vector<int>>>;
+using GroupMembers = vector<int>;
 
 // Global variables
 UsrMap users;
 GroupsMap groups;
+
+/*
+ * This is a nested class to help stick with the OOP principles.  It will serve
+ * as a group object later on.
+ */
+class Group {
+private:
+    int gID;
+    std::string grpName;
+    GroupMembers members;
+public:
+    Group(){};
+    ~Group(){};
+};  // End of the 'Group' class -----------------------------------------------
 
 /*
  * This is the method that will read the passwd file and put all of the users 
