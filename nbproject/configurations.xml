@@ -25,6 +25,8 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>groups</itemPath>
+    <itemPath>passwd</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -45,7 +47,11 @@
           <commandLine>-lboost_system -lpthread -lmysqlpp</commandLine>
         </linkerTool>
       </compileType>
+      <item path="groups" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="overbejt_hw2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="passwd" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -74,7 +80,11 @@
           <commandLine>-lboost_system -lpthread -lmysqlpp</commandLine>
         </linkerTool>
       </compileType>
+      <item path="groups" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="overbejt_hw2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="passwd" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
