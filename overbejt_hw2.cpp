@@ -40,8 +40,13 @@ void readUsers() {
             istringstream is(line);            
             string loginId, unused;
             int uid;
-            is >> loginId >> unused >> uid;
-            cout << "login ID: " << loginId << "\tUID: " << uid << endl;
+            is >> loginId >> unused >> uid;            
+            users.insert({uid, loginId});
+            for (auto i : users) {
+                cout << "UID: " << i.first;
+                cout << "\tlogin ID: " << i.second;
+                cout << endl;
+            }
         }
     }
     pswd.close();
