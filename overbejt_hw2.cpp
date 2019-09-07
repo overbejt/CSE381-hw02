@@ -33,9 +33,15 @@ void readUsers() {
     
     if (pswd.is_open()) {
         while (getline(pswd, line)) {
-            cout << "before: " << line << endl;
+            // Tokenize the line
             replace(line.begin(), line.end(), ':', ' ');
-            cout << "after: " << line << endl;
+            
+            // Parse out the login ID and UID
+            istringstream is(line);            
+            string loginId, unused;
+            int uid;
+            is >> loginId >> unused >> uid;
+            cout << "login ID: " << loginId << "\tUID: " << uid << endl;
         }
     }
     pswd.close();
