@@ -70,9 +70,9 @@ void readGroups() {
             
             // Parse out the login ID and UID
             istringstream is(line);            
-            string loginId, unused;
-            int uid;
-            is >> loginId >> unused >> uid;            
+            string loginId, unused, uid_line;
+            int gid;
+            is >> loginId >> unused >> gid >> uid_line;            
             users.insert({uid, loginId});
 //            for (auto i : users) {
 //                cout << "UID: " << i.first;
