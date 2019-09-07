@@ -18,29 +18,60 @@
 #include <vector>
 #include <utility>
 
-// Aliases
-using namespace std;
-using UsrMap = unordered_map<int, string>;
-using GroupsMap = unordered_map<string, pair<string, vector<int>>>;
-using GroupMembers = vector<int>;
-
-// Global variables
-UsrMap users;
-GroupsMap groups;
-
 /*
  * This is a nested class to help stick with the OOP principles.  It will serve
  * as a group object later on.
  */
 class Group {
+// Aliases
+using GroupMembers = std::vector<int>;
+
+// Access modifiers
 private:
+    // Attributes
     int gID;
     std::string grpName;
     GroupMembers members;
+    
 public:
-    Group(){};
-    ~Group(){};
+    Group(){};  // Constructor
+    ~Group(){};  // Destructor
+    
+    // Getters ----------------------
+    int getGID() {
+        return gID;
+    }  // End of the 'getGID' method
+    
+    std::string getGrpName() {
+        return grpName;
+    }  // End of the 'getGrpName' method
+    
+    GroupMembers getGrpMembers() {
+        return members;
+    }  // End of the 'getGrpMembers' method
+    
+    // Setters ----------------------
+    void setGID(int gID) {
+        this->gID = gID;
+    }  // End of the 'setGID' method
+    
+    void setGrpName(std::string gName) {
+        grpName = gName;
+    }  // End of the 'setGrpName' method
+    
+    void addGroupMember(int uId) {
+        members.push_back(uId);
+    }  // End of the 'addGroupMember' method
 };  // End of the 'Group' class -----------------------------------------------
+
+// Aliases
+using namespace std;
+using UsrMap = unordered_map<int, string>;
+using GroupsMap = unordered_map<string, Group>;
+
+// Global variables
+UsrMap users;
+GroupsMap groups;
 
 /*
  * This is the method that will read the passwd file and put all of the users 
