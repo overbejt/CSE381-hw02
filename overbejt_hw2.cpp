@@ -16,11 +16,12 @@
 #include <sstream>
 #include <algorithm>
 #include <vector>
+#include <utility>
 
 // Aliases
 using namespace std;
 using UsrMap = unordered_map<int, string>;
-using GroupsMap = unordered_map<string, vector<int>>;
+using GroupsMap = unordered_map<string, pair<string, vector<int>>>;
 
 // Global variables
 UsrMap users;
@@ -63,8 +64,8 @@ void readGroups() {
     ifstream grpFile("groups");
     string line;
     
-    if (pswd.is_open()) {
-        while (getline(pswd, line)) {
+    if (grpFile.is_open()) {
+        while (getline(grpFile, line)) {
             // Tokenize the line
             replace(line.begin(), line.end(), ':', ' ');
             
@@ -73,7 +74,7 @@ void readGroups() {
             string loginId, unused, uid_line;
             int gid;
             is >> loginId >> unused >> gid >> uid_line;            
-            users.insert({uid, loginId});
+//            users.insert({uid, loginId});
 //            for (auto i : users) {
 //                cout << "UID: " << i.first;
 //                cout << "\tlogin ID: " << i.second;
