@@ -93,11 +93,6 @@ void readUsers() {
             int uid;
             is >> loginId >> unused >> uid;            
             users.insert({uid, loginId});
-//            for (auto i : users) {
-//                cout << "UID: " << i.first;
-//                cout << "\tlogin ID: " << i.second;
-//                cout << endl;
-//            }
         }
     }
     pswd.close();
@@ -129,11 +124,9 @@ void readGroups() {
             
             // Tokenize uid_line and add the users to the group
             replace(uid_line.begin(), uid_line.end(), ',', ' ');
-//            cout << uid_line << endl;  // Debugging
             istringstream ss(uid_line); 
             int nextUsr;
             while (ss >> nextUsr) {
-//                cout << nextUsr << endl;
                 nextGroup.addGroupMember(nextUsr);
             }
             
