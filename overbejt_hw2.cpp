@@ -68,6 +68,7 @@ public:
 using namespace std;
 using UsrMap = unordered_map<int, string>;
 using GroupsMap = unordered_map<int, Group>;
+using GroupMembers = std::vector<int>;
 
 // Global variables
 UsrMap users;
@@ -147,6 +148,16 @@ int main(int argc, char** argv) {
     readUsers();
     // Scrape groups from groups file
     readGroups();
+    // Testing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    for (auto i : groups) {
+        cout << i.first << " = " << i.second.getGrpName() << ": ";
+        GroupMembers members = i.second.getGrpMembers();
+        for (const auto j : members) {
+            auto usr = users.find(j);
+            cout << usr->second << "(" << j << ") ";
+        }
+        cout << endl;
+    }
     return 0;
 }  // End of main
 
