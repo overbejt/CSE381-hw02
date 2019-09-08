@@ -147,13 +147,13 @@ void printGroup(int groupID) {
     Group currentGroup = groups.find(groupID)->second;
     
     // Print group ID and group name
-    cout << groupID << " = " << currentGroup.getGrpName() << ": ";
+    cout << groupID << " = " << currentGroup.getGrpName() << ":";
     
     // Grab the group members and iterate them all, printing them to the screen.
     GroupMembers members = currentGroup.getGrpMembers();
     for (const auto memberID : members) {
         auto user = users.find(memberID);
-        cout << user->second << "(" << memberID << ") ";
+        cout << " " << user->second << "(" << memberID << ")";
     }
     cout << endl;
 }  // End of the 'printGroup' method

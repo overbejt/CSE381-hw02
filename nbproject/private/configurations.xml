@@ -25,12 +25,12 @@
       <runprofile version="9">
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" 0 1 2 6 100 6 2</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 0</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 1</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" 100</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" 0 1 2 6 100 6 2</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" 100</runcommand>
+        <runcommand>"${OUTPUT_PATH}" 0 1 2 6 100 6 2</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
