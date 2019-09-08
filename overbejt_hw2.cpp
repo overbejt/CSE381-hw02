@@ -162,6 +162,10 @@ int main(int argc, char** argv) {
 //        }
 //        cout << endl;
 //    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // Process user input
+    for (int arg = 1; arg < argc; arg++) {
+        cout << argv[arg] << endl;
+    }
     return 0;
 }  // End of main
 
