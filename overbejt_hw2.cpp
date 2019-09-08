@@ -152,15 +152,15 @@ int main(int argc, char** argv) {
     // Scrape groups from groups file
     readGroups();
     // Testing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for (auto i : groups) {
-        cout << i.first << " = " << i.second.getGrpName() << ": ";
-        GroupMembers members = i.second.getGrpMembers();
-        for (const auto j : members) {
-            auto usr = users.find(j);
-            cout << usr->second << "(" << j << ") ";
-        }
-        cout << endl;
-    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//    for (auto i : groups) {
+//        cout << i.first << " = " << i.second.getGrpName() << ": ";
+//        GroupMembers members = i.second.getGrpMembers();
+//        for (const auto j : members) {
+//            auto usr = users.find(j);
+//            cout << usr->second << "(" << j << ") ";
+//        }
+//        cout << endl;
+//    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     return 0;
 }  // End of main
 
