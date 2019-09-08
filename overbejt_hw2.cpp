@@ -67,7 +67,7 @@ public:
 // Aliases
 using namespace std;
 using UsrMap = unordered_map<int, string>;
-using GroupsMap = unordered_map<string, Group>;
+using GroupsMap = unordered_map<int, Group>;
 
 // Global variables
 UsrMap users;
@@ -131,7 +131,9 @@ void readGroups() {
             int nextUsr;
             while (is >> nextUsr) {
                 nextGroup.addGroupMember(nextUsr);
-            }                  
+            }
+            // Add the group to the map
+            groups.insert({nextGroup.getGID(), nextGroup});
         }
     }
     grpFile.close();
