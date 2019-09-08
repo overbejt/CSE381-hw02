@@ -150,7 +150,7 @@ void readGroups() {
  * @param groupID  The group id number
  */
 void printGroup(int groupID) {
-    
+    cout << groupID << " = Work in progress." << endl;
 }  // End of the 'printGroup' method
 
 /*
@@ -172,18 +172,19 @@ int main(int argc, char** argv) {
 //        cout << endl;
 //    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // Process user input
-    for (int i = 1; i < argc; arg++) {
+    for (int i = 1; i < argc; i++) {
 //        cout << argv[i] << endl;
         
         // Grab current group from user
-        auto group = groups.find(argv[i]);
+        int currentGroup = atoi(argv[i]);
+        auto group = groups.find(currentGroup);
         
         // Check if group exists
         if (group == groups.end()) {
-            cout << argv[i] << " = Group not found." << endl;
+            cout << currentGroup << " = Group not found." << endl;
         } else {
             // Otherwise, print out the group info
-            printGroup(argv[i]);
+            printGroup(currentGroup);
         }
     }
     return 0;
