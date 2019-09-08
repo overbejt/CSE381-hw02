@@ -150,11 +150,13 @@ void readGroups() {
  * @param groupID  The group ID number
  */
 void printGroup(int groupID) {
-//    cout << groupID << " = Work in progress." << endl;
     // Get the group from the groups map
     Group currentGroup = groups.find(groupID)->second;
     
+    // Print group ID and group name
     cout << groupID << " = " << currentGroup.getGrpName() << ": ";
+    
+    // Grab the group members and iterate them all, printing them to the screen.
     GroupMembers members = currentGroup.getGrpMembers();
     for (const auto memberID : members) {
         auto user = users.find(memberID);
