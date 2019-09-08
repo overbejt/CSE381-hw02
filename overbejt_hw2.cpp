@@ -126,6 +126,7 @@ void readGroups() {
             Group nextGroup;
             nextGroup.setGrpName(grpName);
             nextGroup.setGID(gid);
+            
             // Tokenize uid_line and add the users to the group
             replace(uid_line.begin(), uid_line.end(), ',', ' ');
 //            cout << uid_line << endl;  // Debugging
