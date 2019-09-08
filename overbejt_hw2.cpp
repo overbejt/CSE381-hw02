@@ -144,6 +144,15 @@ void readGroups() {
     grpFile.close();
 }  // End of the 'readGroups' method
 
+/**
+ * This is a helper method to print the indicated group to the screen.
+ * 
+ * @param groupID  The group id number
+ */
+void printGroup(int groupID) {
+    
+}  // End of the 'printGroup' method
+
 /*
  * 
  */
@@ -163,8 +172,19 @@ int main(int argc, char** argv) {
 //        cout << endl;
 //    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     // Process user input
-    for (int arg = 1; arg < argc; arg++) {
-        cout << argv[arg] << endl;
+    for (int i = 1; i < argc; arg++) {
+//        cout << argv[i] << endl;
+        
+        // Grab current group from user
+        auto group = groups.find(argv[i]);
+        
+        // Check if group exists
+        if (group == groups.end()) {
+            cout << argv[i] << " = Group not found." << endl;
+        } else {
+            // Otherwise, print out the group info
+            printGroup(argv[i]);
+        }
     }
     return 0;
 }  // End of main
