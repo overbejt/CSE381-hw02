@@ -128,11 +128,14 @@ void readGroups() {
             nextGroup.setGID(gid);
             // Tokenize uid_line and add the users to the group
             replace(uid_line.begin(), uid_line.end(), ',', ' ');
+//            cout << uid_line << endl;  // Debugging
             istringstream ss(uid_line); 
             int nextUsr;
-            while (is >> nextUsr) {
+            while (ss >> nextUsr) {
+//                cout << nextUsr << endl;
                 nextGroup.addGroupMember(nextUsr);
             }
+            
             // Add the group to the map
             groups.insert({nextGroup.getGID(), nextGroup});
         }
@@ -157,7 +160,7 @@ int main(int argc, char** argv) {
             cout << usr->second << "(" << j << ") ";
         }
         cout << endl;
-    }
+    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     return 0;
 }  // End of main
 
