@@ -173,25 +173,14 @@ int main(int argc, char** argv) {
     readUsers();
     // Scrape groups from groups file
     readGroups();
-    // Testing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//    for (auto i : groups) {
-//        cout << i.first << " = " << i.second.getGrpName() << ": ";
-//        GroupMembers members = i.second.getGrpMembers();
-//        for (const auto j : members) {
-//            auto usr = users.find(j);
-//            cout << usr->second << "(" << j << ") ";
-//        }
-//        cout << endl;
-//    }  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     // Process user input
-    for (int i = 1; i < argc; i++) {
-//        cout << argv[i] << endl;
-        
+    for (int i = 1; i < argc; i++) {        
         // Grab current group from user
         int currentGroup = atoi(argv[i]);
         auto group = groups.find(currentGroup);
         
-        // Check if group exists
+        // Check if group exists and print results
         if (group == groups.end()) {
             cout << currentGroup << " = Group not found." << endl;
         } else {
