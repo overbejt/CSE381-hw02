@@ -119,13 +119,19 @@ void readGroups() {
             istringstream is(line);            
             string grpName, unused, uid_line;
             int gid;
-            is >> grpName >> unused >> gid >> uid_line;            
-//            users.insert({uid, loginId});
-//            for (auto i : users) {
-//                cout << "UID: " << i.first;
-//                cout << "\tlogin ID: " << i.second;
-//                cout << endl;
-//            }
+            is >> grpName >> unused >> gid >> uid_line;
+            
+            // Create a new group and initialize all the states
+            Group nextGroup;
+            nextGroup.setGrpName(grpName);
+            nextGroup.setGID(gid);
+            // Tokenize uid_line and add the users to the group
+            replace(uid_line.begin(), uid_line.end(), ',', ' ');
+            istringstream ss(uid_line); 
+            int nextUsr;
+            while (is >> nextUsr) {
+                nextGroup.addGroupMember(nextUsr);
+            }                  
         }
     }
     grpFile.close();
