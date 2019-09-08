@@ -147,10 +147,20 @@ void readGroups() {
 /**
  * This is a helper method to print the indicated group to the screen.
  * 
- * @param groupID  The group id number
+ * @param groupID  The group ID number
  */
 void printGroup(int groupID) {
-    cout << groupID << " = Work in progress." << endl;
+//    cout << groupID << " = Work in progress." << endl;
+    // Get the group from the groups map
+    Group currentGroup = groups.find(groupID)->second;
+    
+    cout << groupID << " = " << currentGroup.getGrpName() << ": ";
+    GroupMembers members = currentGroup.getGrpMembers();
+    for (const auto memberID : members) {
+        auto user = users.find(memberID);
+        cout << user->second << "(" << memberID << ") ";
+    }
+    cout << endl;
 }  // End of the 'printGroup' method
 
 /*
@@ -183,7 +193,6 @@ int main(int argc, char** argv) {
         if (group == groups.end()) {
             cout << currentGroup << " = Group not found." << endl;
         } else {
-            // Otherwise, print out the group info
             printGroup(currentGroup);
         }
     }
